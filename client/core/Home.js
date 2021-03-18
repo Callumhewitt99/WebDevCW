@@ -7,7 +7,7 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 import myImg from './../assets/images/myimage.png'
 import {Link} from 'react-router-dom'
-import {joke} from '../thridparty/api-dadjokes.js'
+import {joke} from '../thirdparty/api-dadjokes.js'
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -62,9 +62,7 @@ export default function Home(){
     return function cleanup(){
       abortController.abort()
     }
-  }, [])    
-    
-    
+  }, [])     
     return (
         <Card className={classes.card}>
           <Typography variant="h6" className={classes.title}>
@@ -75,8 +73,9 @@ export default function Home(){
           <Typography variant="body2" component="p" className={classes.credit} color="textSecondary"> Image by Picasso </Typography>
           <CardContent>
             <Typography variant="body1" component="p">
-              Welcome to Lab Six again.
+              Welcome to my website.
               {jokes.joke}
+             
             <Link to="/users"> Users </Link>
             
             </Typography>

@@ -22,11 +22,17 @@ import theme from './../client/theme'
 //comment out before building for production
 import devBundle from './devBundle'
 
+// a proxy?
+var proxy = require('express-http-proxy');
+
 const CURRENT_WORKING_DIR = process.cwd()
 const app = express()
 
 //comment out before building for production
 devBundle.compile(app)
+
+// proxy?
+app.use('/api/dadjoke', proxy('https://icanhazdadjoke.com/'));
 
 // parse body params and attache them to req.body
 app.use(bodyParser.json())
@@ -42,6 +48,9 @@ app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
 
 app.use('/', userRoutes)
 app.use('/', authRoutes)
+
+
+
 
 app.get('*', (req, res) => {
   const sheets = new ServerStyleSheets()
@@ -67,12 +76,14 @@ app.get('*', (req, res) => {
 
 app.use((err, req, res, next) => {
   if (err.name === 'UnauthorizedError') {
+  	console.log("unauthorized error in express")
     res.status(401).json({"error" : err.name + ": " + err.message})
   }else if (err) {
     res.status(400).json({"error" : err.name + ": " + err.message})
     console.log(err)
   }
 })
+
 
 
 export default app
