@@ -5,7 +5,7 @@ import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
-import myImg from './../assets/images/myimage.png'
+import myImg from './../assets/images/charmander.png'
 import {Link} from 'react-router-dom'
 import {joke} from '../thirdparty/api-dadjokes.js'
 
@@ -66,11 +66,11 @@ export default function Home(){
     return (
         <Card className={classes.card}>
           <Typography variant="h6" className={classes.title}>
-            Home Page
+            Pokemon Picker
           
           </Typography>
           <CardMedia className={classes.media} image={myImg} title="My Image"/>
-          <Typography variant="body2" component="p" className={classes.credit} color="textSecondary"> Image by Picasso </Typography>
+          <Typography variant="body2" component="p" className={classes.credit} color="textSecondary"> Charmander </Typography>
           <CardContent>
             <Typography variant="body1" component="p">
               Welcome to my website.
