@@ -5,7 +5,7 @@ import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
-import {CssBaseline, Grid, CardActions} from '@material-ui/core/styles'
+import {CssBaseline, Grid, CardActions} from '@material-ui/core'
 import myImg1 from './../assets/images/bulbasaur.png'
 import myImg2 from './../assets/images/charmander.png'
 import myImg3 from './../assets/images/squirtle2.png'
@@ -25,8 +25,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 
 const useStyles = makeStyles(theme => ({
   card: {
-    maxWidth: 300,
-    
+    maxWidth: 'auto',
     margin: 'auto',
     marginTop: theme.spacing(5),
     marginBottom: theme.spacing(5),
@@ -44,8 +43,14 @@ const useStyles = makeStyles(theme => ({
     maxHeight: '100%',
   },
   media: {
-    minHeight: 300
+    width: 'auto',
+    height: 500,
+    resizeMode: 'contain',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
+
   credit: {
     padding: 10,
     textAlign: 'right',
@@ -54,6 +59,13 @@ const useStyles = makeStyles(theme => ({
     '& a':{
       color: '#3f4771'
     } 
+  },
+  grid :{
+    height: 'auto', 
+    width: '100%',
+    margin: '0px'
+
+
   }
 }))
 
@@ -96,40 +108,41 @@ export default function Home(){
       </Typography>
       
 
-      <grid container spacing={2} className={classes.grid}>
-      <grid item lg={4} md={12} >
-          <Typography variant="h6" className={classes.title2}>
+      <Grid container spacing={1} className={classes.grid}>
+      <Grid item  xs={12} md={4} >
+          <Typography variant="h4" className={classes.title2}>
             Charmander
             <CardMedia className={classes.media} image={myImg2} title="Charmander"/>
-            
+            <Typography variant="h6" className={classes.title2}>
               Pick Charmander
               {jokes.joke}
-          
+              </Typography>
           </Typography>
-        </grid>
-        <grid item lg={4} md={12} >
-          <Typography variant="h6" className={classes.title2}>
+        </Grid>
+        <Grid item xs={12} md={4}  >
+          <Typography variant="h4" className={classes.title2}>
             Bulbasaur
             <CardMedia className={classes.media} image={myImg1} title="Bulbasaur"/>
-            
-              Pick Bulbasaur
-              {jokes.joke}
+              <Typography variant="h6" className={classes.title2}>
+                Pick Bulbasaur
+                {jokes.joke}
+                </Typography>
             
           </Typography>
-        </grid>
+        </Grid>
 
-        <grid item lg={4} md={12} >
-          <Typography variant="h6" className={classes.title2}>
+        <Grid itemxs={12} md={4}  >
+          <Typography variant="h4" className={classes.title2}>
             Squirtle
             <CardMedia className={classes.media} image={myImg3} title="Squirtle"/>
-          
+            <Typography variant="h6" className={classes.title2}>
               Pick Squirtle
               {jokes.joke}
-          
+              </Typography>
 
           </Typography>
-        </grid>
-      </grid>
+        </Grid>
+      </Grid>
 
 
 

@@ -1,5 +1,5 @@
 {
-  "name": "lab6userlogins",
+  "name": "Coursework",
   "version": "1.0.0",
   "description": "An actual user login",
   "main": "./dist/server.generated.js",
