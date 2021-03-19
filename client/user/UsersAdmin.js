@@ -15,7 +15,6 @@ import {Link} from 'react-router-dom'
 import {listadmin} from './api-user.js'
 import auth from './../auth/auth-helper'
 
-
 const useStyles = makeStyles(theme => ({
   root: theme.mixins.gutters({
     padding: theme.spacing(1),
@@ -67,7 +66,7 @@ export default function Users({ match }) {
                         </Avatar>
                       </ListItemAvatar>
                       <ListItemText primary={item.name}/>
-                      <ListItemText primary={"Administrator: " + item.admin}/>
+                      <ListItemText primary={"Their choice: " + item.about}/>
                       <ListItemSecondaryAction>
                       <IconButton>
                           <ArrowForward/>
@@ -78,9 +77,6 @@ export default function Users({ match }) {
                })
              }
         </List>
-        <Typography variant="h6" className={classes.title}>
-           ({users.length})
-        </Typography>
       </Paper>
     )
 }
