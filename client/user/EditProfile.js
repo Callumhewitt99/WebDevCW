@@ -124,12 +124,7 @@ export default function EditProfile({ match }) {
 
           }
         </CardContent>
-        <CardActions>
-          <Button color="primary" variant="contained" onClick={clickSubmit} className={classes.submit}>Submit</Button>
-          <Button onClick={clickCharmander} variant="contained" size="large" colour="primary" className={classes.margin}>
-                        Pick Charmander
-                      </Button>
-        </CardActions>
+        
       </Card>
     )
 
