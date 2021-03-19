@@ -1,6 +1,8 @@
 import User from '../models/user.model'
+import Pokemon from '../models/pokemon.model'
 import extend from 'lodash/extend'
 import errorHandler from './../helpers/dbErrorHandler'
+
 
 const create = async (req, res) => {
   const user = new User(req.body)
@@ -69,6 +71,7 @@ const update = async (req, res) => {
     user = extend(user, req.body)
     user.updated = Date.now()
     user.profileclicks = user.profileclicks + 1
+    user.charmander_pick = user.charmander_pick + 1
     await user.save()
     user.hashed_password = undefined
     user.salt = undefined
@@ -79,7 +82,34 @@ const update = async (req, res) => {
     })
   }
 }
+const charmander_update = async (req, res) => {
+  try {
+    user.charmander_pick = user.charmander_pick + 1
+  } catch (err) {
+    return res.status(400).json({
+      error: errorHandler.getErrorMessage(err)
+    })
+  }
+}
 
+const bulbasaur_update = async (req, res) => {
+  try {
+    Pokemon.charmander_pick = Pokemon.charmander_pick + 1
+  } catch (err) {
+    return res.status(400).json({
+      error: errorHandler.getErrorMessage(err)
+    })
+  }
+}
+const squirtle_update = async (req, res) => {
+  try {
+    Pokemon.charmander_pick = Pokemon.charmander_pick + 1
+  } catch (err) {
+    return res.status(400).json({
+      error: errorHandler.getErrorMessage(err)
+    })
+  }
+}
 const remove = async (req, res) => {
   try {
     let user = req.profile
@@ -101,5 +131,8 @@ export default {
   list,
   listadmin,
   remove,
-  update
+  update,
+  charmander_update,
+  bulbasaur_update,
+  squirtle_update
 }

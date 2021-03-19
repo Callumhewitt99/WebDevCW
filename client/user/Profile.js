@@ -16,6 +16,9 @@ import DeleteUser from './DeleteUser'
 import auth from './../auth/auth-helper'
 import {read} from './api-user.js'
 import {Redirect, Link} from 'react-router-dom'
+import Button from '@material-ui/core/Button'
+
+
 
 const useStyles = makeStyles(theme => ({
   root: theme.mixins.gutters({
@@ -73,7 +76,8 @@ export default function Profile({ match }) {
             </ListItemAvatar>
             <ListItemText primary={user.name} secondary={user.email}/> {
              auth.isAuthenticated().user && auth.isAuthenticated().user._id == user._id &&
-              (<ListItemSecondaryAction>
+              (
+              <ListItemSecondaryAction>
                 <Link to={"/user/edit/" + user._id}>
                   <IconButton aria-label="Edit" color="primary">
                     <Edit/>
@@ -88,13 +92,17 @@ export default function Profile({ match }) {
           </ListItem>
           <ListItem>
           	<ListItemText primary={"Profile edits: " + user.profileclicks}/>
+          </ListItem>        
+          <ListItem>
           </ListItem>
+         
          <Divider/>
           <ListItem>
             <ListItemText primary={"Joined: " + (
               new Date(user.created)).toDateString()}/>
           </ListItem>
         </List>
+        
       </Paper>
     )
   }

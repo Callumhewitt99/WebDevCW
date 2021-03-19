@@ -27,6 +27,8 @@ const UserSchema = new mongoose.Schema({
   about: {
     type: String,
     trim: true,
+    enum: ['Charmander', 'Blubasaur','Squritle', 'Please either Charmander, Blubasaur or Squritle'],
+   
   },
   profileclicks: {
     type: Number,
@@ -36,7 +38,8 @@ const UserSchema = new mongoose.Schema({
   admin: {
   	type: Boolean,
   	default: false
-  }
+  },
+
 })
 
 UserSchema
@@ -81,3 +84,11 @@ UserSchema.methods = {
 
 
 export default mongoose.model('User', UserSchema)
+
+
+
+
+
+
+
+
