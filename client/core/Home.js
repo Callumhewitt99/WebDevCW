@@ -11,6 +11,7 @@ import myImg2 from './../assets/images/charmander.png' // picture of charmander
 import myImg3 from './../assets/images/squirtle2.png' // picture of squirtle fist picture of squirtle did not work in heroku 
 import {Link} from 'react-router-dom'
 import {joke} from '../thirdparty/api-dadjokes.js'
+import {charFact} from '../thirdparty/api-Charmander.js'
 import Button from '@material-ui/core/Button'
 import Textfield from '@material-ui/core/TextField'
 import List from '@material-ui/core/List'
@@ -105,7 +106,7 @@ export default function Home(){
       <Typography variant="h2" className={classes.title}>
         Pokemon Picker
         <Typography variant="h6" className={classes.title}>
-       Hello and welcome to Pokemon picker, this website allows for you to pick which of the 3 Kanto starting Pokemon ( Charmader, Bulbasaur or Squirtle ) you would like to see be the main character in an unnamed upcoming Pokemon game. Please create an account and type in your answer. 
+       Hello and welcome to Pokemon picker, this website allows for you to pick which of the 3 Kanto starting Pokemon ( Charmader, Bulbasaur or Squirtle ) you would like to see be the main character in an unnamed upcoming Pokemon game. Please create an account and type in your answer. Here is a random joke. {jokes.joke}
       
       </Typography>
       
@@ -119,7 +120,7 @@ export default function Home(){
             <CardMedia className={classes.media} image={myImg2} title="Charmander"/>
             <Typography variant="h6" className={classes.title2}>
               Pick Charmander
-              {jokes.joke}
+              {jokes.charFact}
               </Typography>
           </Typography>
         </Grid>
@@ -129,7 +130,7 @@ export default function Home(){
             <CardMedia className={classes.media} image={myImg1} title="Bulbasaur"/>
               <Typography variant="h6" className={classes.title2}>
                 Pick Bulbasaur
-                {jokes.joke}
+                
                 </Typography>
             
           </Typography>
@@ -141,11 +142,13 @@ export default function Home(){
             <CardMedia className={classes.media} image={myImg3} title="Squirtle"/>
             <Typography variant="h6" className={classes.title2}>
               Pick Squirtle
-              {jokes.joke}
+              {jokes.charFact}
               </Typography>
 
           </Typography>
+          
         </Grid>
+
       </Grid>
 
 

@@ -33,7 +33,7 @@ devBundle.compile(app)
 
 // proxy?
 app.use('/api/dadjoke', proxy('https://icanhazdadjoke.com/'));
-
+app.use('/api/charFact', proxy('https://pokeapi.co/api/v2/type/10/'));
 // parse body params and attache them to req.body
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
