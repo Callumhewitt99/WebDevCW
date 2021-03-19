@@ -45,13 +45,13 @@ export default function Users({ match }) {
       }
     })
 
-    return function cleanup(){
+    return function cleanup(){ 
       abortController.abort()
     }
   }, [match.params.userId])
 
 
-    return (
+    return (      // displays what people chose 
       <Paper className={classes.root} elevation={4}>
         <Typography variant="h6" className={classes.title}>
           All Users ({users.length})
@@ -66,7 +66,7 @@ export default function Users({ match }) {
                         </Avatar>
                       </ListItemAvatar>
                       <ListItemText primary={item.name}/>
-                      <ListItemText primary={"Their choice: " + item.about}/>
+                      <ListItemText primary={"Their choice: " + item.about}/> 
                       <ListItemSecondaryAction>
                       <IconButton>
                           <ArrowForward/>

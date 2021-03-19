@@ -6,9 +6,9 @@ import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 import {CssBaseline, Grid, CardActions} from '@material-ui/core'
-import myImg1 from './../assets/images/bulbasaur.png'
-import myImg2 from './../assets/images/charmander.png'
-import myImg3 from './../assets/images/squirtle2.png'
+import myImg1 from './../assets/images/bulbasaur.png' // picture of bulbasaur
+import myImg2 from './../assets/images/charmander.png' // picture of charmander
+import myImg3 from './../assets/images/squirtle2.png' // picture of squirtle fist picture of squirtle did not work in heroku 
 import {Link} from 'react-router-dom'
 import {joke} from '../thirdparty/api-dadjokes.js'
 import Button from '@material-ui/core/Button'
@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
     maxWidth: '10%',
     maxHeight: '100%',
   },
-  media: {
+  media: {      // for the images 
     width: 'auto',
     height: 500,
     resizeMode: 'contain',
@@ -60,9 +60,9 @@ const useStyles = makeStyles(theme => ({
       color: '#3f4771'
     } 
   },
-  grid :{
+  grid :{             // grid layout used
     height: 'auto', 
-    width: '100%',
+    width: '100%', 
     margin: '0px'
 
 
@@ -101,12 +101,16 @@ export default function Home(){
     return (
 
 
-      <Card className={classes.card}>
-      <Typography variant="h6" className={classes.title}>
+      <Card className={classes.card}> 
+      <Typography variant="h2" className={classes.title}>
         Pokemon Picker
+        <Typography variant="h6" className={classes.title}>
+       Hello and welcome to Pokemon picker, this website allows for you to pick which of the 3 Kanto starting Pokemon ( Charmader, Bulbasaur or Squirtle ) you would like to see be the main character in an unnamed upcoming Pokemon game. Please create an account and type in your answer. 
       
       </Typography>
       
+      </Typography>
+
 
       <Grid container spacing={1} className={classes.grid}>
       <Grid item  xs={12} md={4} >

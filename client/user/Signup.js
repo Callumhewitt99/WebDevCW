@@ -57,9 +57,9 @@ export default function Signup() {
 
   const clickSubmit = () => {
     const user = {
-      name: values.name || undefined,
-      email: values.email || undefined,
-      password: values.password || undefined
+      name: values.name || undefined,       // user must have name
+      email: values.email || undefined,     // user must have  email
+      password: values.password || undefined    // user must have password
     }
     create(user).then((data) => {
       if (data.error) {

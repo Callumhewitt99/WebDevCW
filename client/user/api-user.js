@@ -79,7 +79,7 @@ const update = async (params, credentials, user) => {
   }
 }
 
-const charmander_update  = async (params, credentials, user) => {
+const charmander_update  = async (params, credentials, user) => { //  this is not needed this would be used for a counter button 
   try {
     let response = await fetch('/api/users/' + params.userId, {
       method: 'PUT',

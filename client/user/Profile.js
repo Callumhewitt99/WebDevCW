@@ -20,7 +20,7 @@ import Button from '@material-ui/core/Button'
 
 
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(theme => ({ // use these styles 
   root: theme.mixins.gutters({
     maxWidth: 600,
     margin: 'auto',
@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function Profile({ match }) {
+export default function Profile({ match }) {  // profile function 
   const classes = useStyles()
   const [user, setUser] = useState({})
   const [redirectToSignin, setRedirectToSignin] = useState(false)
@@ -59,13 +59,13 @@ export default function Profile({ match }) {
 
   }, [match.params.userId])
   
-    if (redirectToSignin) {
+    if (redirectToSignin) {                 // sign in function 
       return <Redirect to='/signin'/>
     }
-    return (
+    return (                                // casting vote 
       <Paper className={classes.root} elevation={4}>
         <Typography variant="h6" className={classes.title}>
-          Profile
+          My Vote
         </Typography>
         <List dense>
           <ListItem>
@@ -88,10 +88,10 @@ export default function Profile({ match }) {
             }
           </ListItem>
           <ListItem>
-          	<ListItemText primary={user.about}/>
+          	<ListItemText primary={"You voted for: " + user.about}/>
           </ListItem>
           <ListItem>
-          	<ListItemText primary={"Profile edits: " + user.profileclicks}/>
+          	<ListItemText primary={"You have voted: " + user.profileclicks + " times"}/> 
           </ListItem>        
           <ListItem>
           </ListItem>
