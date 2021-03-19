@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography'
 import Icon from '@material-ui/core/Icon'
 import { makeStyles } from '@material-ui/core/styles'
 import auth from './../auth/auth-helper'
-import {read, update} from './api-user.js'
+import {read, update, charmander_update} from './api-user.js'
 import {Redirect} from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
@@ -88,6 +88,7 @@ export default function EditProfile({ match }) {
       }
     })
   }
+
   const handleChange = name => event => {
     setValues({...values, [name]: event.target.value})
   }
@@ -100,6 +101,7 @@ export default function EditProfile({ match }) {
         <CardContent>
           <Typography variant="h6" className={classes.title}>
             Edit Profile
+
           </Typography>
           <TextField id="name" label="Name" className={classes.textField} value={values.name} onChange={handleChange('name')} margin="normal"/><br/>
           <TextField
@@ -119,12 +121,16 @@ export default function EditProfile({ match }) {
               <Icon color="error" className={classes.error}>error</Icon>
               {values.error}
             </Typography>)
+
           }
         </CardContent>
         <CardActions>
           <Button color="primary" variant="contained" onClick={clickSubmit} className={classes.submit}>Submit</Button>
+          <Button onClick={clickCharmander} variant="contained" size="large" colour="primary" className={classes.margin}>
+                        Pick Charmander
+                      </Button>
         </CardActions>
       </Card>
     )
-}
 
+        }
