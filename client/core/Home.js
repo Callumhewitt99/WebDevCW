@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography'
 import {CssBaseline, Grid, CardActions} from '@material-ui/core/styles'
 import myImg1 from './../assets/images/bulbasaur.png'
 import myImg2 from './../assets/images/charmander.png'
-//import myImg3 from './../assets/images/squirtle.png'
+import myImg3 from './../assets/images/squirtle2.png'
 import {Link} from 'react-router-dom'
 import {joke} from '../thirdparty/api-dadjokes.js'
 import Button from '@material-ui/core/Button'
@@ -118,7 +118,17 @@ export default function Home(){
           </Typography>
         </grid>
 
-       
+        <grid item lg={4} md={12} >
+          <Typography variant="h6" className={classes.title2}>
+            Squirtle
+            <CardMedia className={classes.media} image={myImg3} title="Squirtle"/>
+          
+              Pick Squirtle
+              {jokes.joke}
+          
+
+          </Typography>
+        </grid>
       </grid>
 
 
